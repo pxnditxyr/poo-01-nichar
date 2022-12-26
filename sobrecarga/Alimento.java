@@ -54,8 +54,14 @@ public class Main {
       }
     }
     // c)
-    fValle.nutrientes.remove( 0 );
-    fTropical.nutrientes.remove( 0 );
+    fValle.nutriente[ 0 ] = null;
+    fTropical.nutriente[ 0 ] = null;
+    for ( int i = 1; i < fValle.nutrientes.length; i++ ) {
+      fValle.nutrientes[ i - 1 ] = fValle.nutrientes[ i ];
+    }
+    for ( int i = 1; i < fTropical.nutrientes.length; i++ ) {
+      fTropical.nutrientes[ i - 1 ] = fTropical.nutrientes[ i ];
+    }
 
     for ( int i = 0; i < fValle.nutrientes.length; i++ ) {
       System.out.println( fValle.nutrientes[ i ] );
