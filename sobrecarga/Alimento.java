@@ -42,15 +42,23 @@ public class Main {
     // b)
     System.out.println( "Ingrese el nutriente a buscar: " );
     String nutriente = sc.nextLine();
-    if( fValle.nutrientes.contains( nutriente ) ) {
-      System.out.println( "La fruta " + fValle.getNombre() + " tiene el nutriente " + nutriente );
-    }
 
-    if( fTropical.nutrientes.contains( nutriente ) ) {
-      System.out.println( "La fruta " + fTropical.getNombre() + " tiene el nutriente " + nutriente );
+    for ( int i = 0; i < fValle.nutrientes.length; i++ ) {
+      if ( fValle.nutrientes[ i ].equals( nutriente ) ) {
+        System.out.println( "El nutriente " + nutriente + " se encuentra en " + fValle.nombre );
+      }
+    }
+    for ( int i = 0; i < fTropicalt.nutrientes.length; i++ ) {
+      if ( fTropical.nutrientes[ i ].equals( nutriente ) ) {
+        System.out.println( "El nutriente " + nutriente + " se encuentra en " + fTropical.nombre );
+      }
     }
     // c)
     fValle.nutrientes.remove( 0 );
     fTropical.nutrientes.remove( 0 );
+
+    for ( int i = 0; i < fValle.nutrientes.length; i++ ) {
+      System.out.println( fValle.nutrientes[ i ] );
+    }
   }
 }
